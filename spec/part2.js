@@ -191,7 +191,7 @@
         // the behavior described by the `it` string
         var destination = { a: 'a' };
         var source = { a: 'b' };
-        var extended = _.extend(destination,source);
+        var extended = _.extend(destination, source);
         expect(extended.a).to.equal('b');
       });
 
