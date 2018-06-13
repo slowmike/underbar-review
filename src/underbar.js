@@ -40,7 +40,7 @@
   _.last = function(array, n) {
     //n === undefined, return array[array.length-1];
     //if n!== undefined, array.slice(array.length - n);
-    return n === undefined ? array[array.length - 1] : n === 0 ? [] :array.slice(-n);
+    return n === undefined ? array[array.length - 1] : n === 0 ? [] : array.slice(-n);
   };
 
   // Call iterator(value, key, collection) for each element of collection.
@@ -50,7 +50,7 @@
   // iterator function over each item in the input collection.
   _.each = function(collection, iterator) {
     //if(Array.isArray(collection)) ...
-      //for (var i = 0; i < collection.length; i++)...iterator(collection[i], i, collection)
+    //for (var i = 0; i < collection.length; i++)...iterator(collection[i], i, collection)
     //else...for(key in collection)... iterator(collection[key], key, collection)
     if (typeof(collection) === 'object') {
       if (Array.isArray(collection)) {
@@ -86,7 +86,7 @@
   _.filter = function(collection, test) {
     var result = [];
     _.each(collection, function(item) {
-      if(test(item)) {
+      if (test(item)) {
         result.push(item);
       }
     });
@@ -97,7 +97,7 @@
   _.reject = function(collection, test) {
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
-    return _.filter(collection, function(num){ return !test(num); });
+    return _.filter(collection, function(num) { return !test(num); });
   };
 
   // Produce a duplicate-free version of the array.
@@ -118,16 +118,16 @@
         }
       }
     }*/
-    if(isSorted) {
+    if (isSorted) {
       _.each(array, function(num) {
-        if(_.indexOf(iterated, iterator(num)) === -1) {
+        if (_.indexOf(iterated, iterator(num)) === -1) {
           iterated.push(iterator(num));
           result.push(num); 
         }
       });
     } else {
       _.each(array, function(num) {
-        if(_.indexOf(result, num) === -1) {
+        if (_.indexOf(result, num) === -1) {
           result.push(num);
         }
       });
@@ -194,10 +194,10 @@
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
     var args2 = (arguments.length === 2);
-    if(args2) {
+    if (args2) {
       accumulator = _.first(collection);
       args2 = false;
-      collection = _.last(collection, collection.length-1);
+      collection = _.last(collection, collection.length - 1);
     }
     
     _.each(collection, function(num) {
